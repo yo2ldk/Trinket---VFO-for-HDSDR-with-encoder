@@ -83,12 +83,12 @@ void loop()
  
   enc_prev_pos = enc_cur_pos;
   if (enc_action > 0) {
-    TrinketHidCombo.pressKey(0x01,0x4F);
+    TrinketHidCombo.pressKey(0x01,0xXX);
     TrinketHidCombo.pressKey(0,0);
     delay(5);
   }
   else if (enc_action < 0) {
-    TrinketHidCombo.pressKey(0x01,0x50);
+    TrinketHidCombo.pressKey(0x01,0xXX);
     TrinketHidCombo.pressKey(0,0);
     delay(5);
   }
@@ -96,7 +96,7 @@ void loop()
   {
     if (sw_was_pressed == 0)
     {
-      TrinketHidCombo.pressKey(0x01,0x19);
+      TrinketHidCombo.pressKey(0x01,0xXX);
       TrinketHidCombo.pressKey(0,0);
      delay(5);
      }
