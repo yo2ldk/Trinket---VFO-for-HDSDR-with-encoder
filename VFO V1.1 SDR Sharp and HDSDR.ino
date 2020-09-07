@@ -46,7 +46,7 @@ void loop()
       if (enc_cur_pos == 0x01) {
         enc_flags |= (1 << 0);
       }
-      else if (enc_cur_pos == 0x02) {
+      else if (enc_cur_pos == 0x0) {
         enc_flags |= (1 << 1);
       }
     }
@@ -83,12 +83,13 @@ void loop()
  
   enc_prev_pos = enc_cur_pos;
   if (enc_action > 0) {
-    TrinketHidCombo.pressKey(0x01,0xXX);
+    TrinketHidCombo.pressKey(0x0,0x0)
+;
     TrinketHidCombo.pressKey(0,0);
     delay(10);
   }
   else if (enc_action < 0) {
-    TrinketHidCombo.pressKey(0x01,0xXX);
+    TrinketHidCombo.pressKey(0x0,0x0);
     TrinketHidCombo.pressKey(0,0);
     delay(10);
   }
@@ -96,19 +97,7 @@ void loop()
   {
     if (sw_was_pressed == 0)
     {
-      TrinketHidCombo.pressKey(0x01,0xXX);
-      TrinketHidCombo.pressKey(0,0);
+      
      delay(10);
-     }
-    sw_was_pressed = 1;
-  }
-  else
-  {
-    if (sw_was_pressed != 0) {
-      delay(5); 
-    }
-    sw_was_pressed = 0;
-  }
- 
-  TrinketHidCombo.poll(); 
+   
 }
